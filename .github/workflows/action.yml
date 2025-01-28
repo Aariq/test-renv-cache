@@ -1,0 +1,21 @@
+on:
+  push:
+    branches: main
+
+jobs:
+  states:
+    strategy:
+      matrix:
+        state: [AL, AK]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: r-lib/actions/setup-r@v2
+      
+      - name: Install R packages
+        uses: r-lib/actions/setup-renv@v2
+      
+      - name: do something
+        run: Rscript -e 'Sys.getenv("STATE")'
+        env:
+          STATE: ${{ matrix.state }}
