@@ -6,7 +6,7 @@ jobs:
   states:
     strategy:
       matrix:
-        state: [AL, AK]
+        state: [AL, AK, AZ]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
