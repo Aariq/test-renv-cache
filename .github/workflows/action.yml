@@ -16,6 +16,6 @@ jobs:
         uses: r-lib/actions/setup-renv@v2
       
       - name: do something
-        run: Rscript -e 'Sys.getenv("STATE")'
+        run: Rscript script.R
         env:
           STATE: ${{ matrix.state }}
