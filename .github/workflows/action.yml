@@ -16,6 +16,7 @@ jobs:
         uses: r-lib/actions/setup-renv@v2
         env:
           RENV_CONFIG_PAK_ENABLED: true
+          PKG_SYSREQS: false
       
       - name: do something
         run: Rscript script.R
