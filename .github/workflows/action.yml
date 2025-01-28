@@ -14,6 +14,8 @@ jobs:
       
       - name: Install R packages
         uses: r-lib/actions/setup-renv@v2
+        env:
+          RENV_CONFIG_PAK_ENABLED: true
       
       - name: do something
         run: Rscript script.R
