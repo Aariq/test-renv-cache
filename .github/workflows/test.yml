@@ -1,0 +1,16 @@
+name: URL Format Test
+
+on:
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test Bare URL
+        run: |
+          echo "<https://dev.mysql.com/downloads/connector/odbc/>"
+          
+      - name: Test with echo -e
+        run: |
+          echo -e "<https://dev.mysql.com/downloads/connector/odbc/>"
